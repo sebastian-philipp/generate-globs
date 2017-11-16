@@ -34,6 +34,11 @@ For example:
 
 Returns an empty list, if `whitelist` is empty.
 
+## Limitation
+
+Generating good globs for arbitrary input is hard, thus only expect decent globs for "friendly" input.
+Also, don't use it for user input.
+
 
 ## Running the tests    
     py.test -v  test_generate_globs.py
