@@ -7,7 +7,7 @@ Generate glob expressions by example.
 
 Generate a list of globs that match all elements of `whitelist` and none of `blacklist`.
 
-```
+```python
 >>> import fnmatch
 >>> # whitelist, blacklist = [], []
 >>> globs = generate_globs(whitelist, blacklist)
@@ -15,14 +15,14 @@ Generate a list of globs that match all elements of `whitelist` and none of `bla
 
 `generate_globs` generates globs that fulfill both assertions:
 
-```
+```python
 >>> assert all([any([fnmatch.filter([white], glob) for glob in globs]) for white in whitelist])
 >>> assert not any([fnmatch.filter(blacklist, glob) for glob in globs])
 ```
 
 For example:
 
-```
+```python
 >>> generate_globs(whitelist=['data1', 'data2', 'data3'], blacklist=['admin']) 
 {['data*']}
 
