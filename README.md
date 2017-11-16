@@ -16,8 +16,7 @@ Generate a list of globs that match all elements of `whitelist` and none of `bla
 `generate_globs` generates globs that fulfill both assertions:
 
 ```
->>> assert all([any([fnmatch.filter([white], glob) for glob in globs]) for white in
->>>            whitelist])
+>>> assert all([any([fnmatch.filter([white], glob) for glob in globs]) for white in whitelist])
 >>> assert not any([fnmatch.filter(blacklist, glob) for glob in globs])
 ```
 
